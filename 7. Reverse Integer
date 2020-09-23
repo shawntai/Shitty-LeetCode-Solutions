@@ -1,0 +1,31 @@
+class Solution(object):
+
+    def reverse(self, num):
+
+        def nDigits(num):
+            if num == 0:
+                return 1
+            nd = 0
+            while num > 0:
+                nd += 1
+                num = int(num / 10)
+            return nd
+
+        # num = int(input())
+        neg = False
+        if num < 0:
+            neg = True
+            num = -num
+
+        # nd = nDigits(num)
+
+        import math
+        nd = int(math.log10(num))+1
+
+        ans = 0
+        for i in range(nd):
+            ans = ans * 10 + num % 10
+            num = int(num / 10)
+        if neg:
+            ans = -ans
+        return ans if ans >= -(2 ** 31) and ans <= (2 ** 31 - 1) else 0

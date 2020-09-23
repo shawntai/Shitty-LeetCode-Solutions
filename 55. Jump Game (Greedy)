@@ -1,0 +1,22 @@
+def jump(nums, pos):
+    if len(nums) == 1:
+        return True
+    nextPos = pos
+    all0 = True
+    for i in range(pos+1, pos+nums[pos]+1):
+        if i < len(nums) and i + nums[i] >= nextPos + nums[nextPos]:
+            nextPos = i
+    print(nextPos)
+    if nextPos + nums[nextPos] >= len(nums) - 1:
+        return True
+    if nextPos == pos:
+        return False
+    '''if nums[nextPos] == 0:
+        return False
+    if nextPos + nums[nextPos] < len(nums) and nums[nextPos + nums[nextPos]] == 0:
+        return False
+    '''
+    return jump(nums, nextPos)
+
+nums = [3, 2, 1, 0, 4]
+print(jump(nums, 0))

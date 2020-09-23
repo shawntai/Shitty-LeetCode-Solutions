@@ -1,0 +1,21 @@
+def sol(nums):
+
+    n_changed = 0
+    for i in range(len(nums)):
+        if i == len(nums)-1:
+            nums[i] = 9999999
+            n_changed += 1
+        else:
+            if nums[i] < nums[i-1]:
+                if i == 0:
+                    nums[i] = -999999
+                else:
+                    nums[i] = nums[i-1]
+                n_changed += 1
+        if n_changed > 1:
+            return False
+
+    return True
+    
+
+print(sol([5,7,1,8]))
