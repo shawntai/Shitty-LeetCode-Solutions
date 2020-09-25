@@ -1,2 +1,2 @@
 # Shitty-LeetCode-Solutions
-## thowaway repo for leetcode solutions
+thowaway repo for leetcode solutions
