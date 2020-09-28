@@ -14,7 +14,7 @@ def sol(nums):
             if nums[i] > third_i and i != first_i and i != second_i:
                 third_i = i
     else:
-        
+        print('idk')
     return nums[first_i]*nums[second_i]*nums[third_i]
 
 
